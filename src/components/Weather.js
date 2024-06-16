@@ -14,29 +14,25 @@ function Weather() {
 
   async function weatherData(e) {
     e.preventDefault()
-    if (form.city === '') {
+    const {city, country} = form
+
+    if (city === '') {
       alert('Add values')
     } else {
-      const data = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${form.city},${form.country}&APPID=${APIKEY}`,
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${APIKEY}`,
       )
-        .then(res => res.json())
-        .then(data => data)
+      const data = await response.json()
 
-      setWeather({data: data})
+      setWeather({data})
     }
   }
 
-  const handleChange = e => {
-    const name = e.target.name
-    const value = e.target.value
-
-    if (name === 'city') {
-      setForm({...form, city: value})
-    }
-    if (name === 'country') {
-      setForm({...form, country: value})
-    }
+  const handleChange = ({target: {name, value}}) => {
+    setForm(prevForm => ({
+      ...prevForm,
+      [name]: value,
+    }))
   }
 
   const toggleDarkMode = () => {
@@ -52,16 +48,15 @@ function Weather() {
           type="text"
           placeholder="City"
           name="city"
-          onChange={e => handleChange(e)}
+          onChange={handleChange}
         />
-
         <input
           type="text"
           placeholder="Country"
           name="country"
-          onChange={e => handleChange(e)}
+          onChange={handleChange}
         />
-        <button className="getweather" onClick={e => weatherData(e)}>
+        <button className="getweather" onClick={weatherData}>
           Submit
         </button>
       </form>
