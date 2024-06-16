@@ -1,0 +1,102 @@
+.weather {
+  margin: 2rem 0;
+  border-radius: 20px;
+  padding-bottom: 30px;
+  width: max-content;
+  padding: 0px 20px 20px 20px;
+  position: relative;
+}
+.weather .title {
+  font-size: 4rem;
+  font-family: roboto;
+}
+.weather form {
+  margin-top: 30px;
+}
+.weather form input {
+  padding: 10px;
+  border: none;
+  margin-right: 10px;
+}
+
+.weather form input:focus {
+  outline: none;
+}
+
+.weather .getweather {
+  margin-left: 10px;
+  padding: 8px;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 10px;
+  background: rgba(8, 116, 62, 0.8);
+  cursor: pointer;
+  color: whitesmoke;
+}
+
+.weather .getweather:hover {
+  background: transparent;
+  color: black;
+}
+
+.weather .getweather:focus {
+  outline: none;
+}
+
+.weather {
+  text-align: center;
+  padding: 20px;
+}
+
+.dark-mode {
+  background-image: linear-gradient(to right, rgb(23, 26, 27), rgb(88, 84, 88));
+  background-size: cover;
+  color: rgb(243, 232, 232);
+}
+
+.light-mode {
+  background-image: linear-gradient(
+    to right,
+    rgb(45, 157, 223),
+    rgb(235, 103, 240)
+  );
+  background-size: cover;
+  color: black;
+}
+
+.title {
+  font-size: 2em;
+  font-family: roboto;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.getweather {
+  background-color: #e244a0;
+  color: white;
+}
+
+.toggle-mode {
+  background-color: #796426;
+  color: white;
+}
+
+.Err-msg {
+  color: red;
+  font-size: 2em;
+  font-family: roboto;
+}
